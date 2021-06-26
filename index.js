@@ -19,7 +19,7 @@ const randomIntegerFromInterval = (min, max) => {
 
 start.addEventListener('click', () => {        
     changeColor = setInterval(() => {            
-        body.style.backgroundColor = colors[randomIntegerFromInterval(colors[0], colors.length)];
+        body.style.backgroundColor = colors[randomIntegerFromInterval(0, colors.length - 1)];
     }, 1000);
 
     start.setAttribute('disabled', true);
@@ -28,6 +28,7 @@ start.addEventListener('click', () => {
 
 stop.addEventListener('click', () => {
     clearInterval(changeColor);
+
     stop.setAttribute('disabled', true);
     start.removeAttribute('disabled');
 });
